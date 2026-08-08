@@ -1,0 +1,26 @@
+<button type="submit" (click)="createData()">Create</button>
+
+<table *ngIf="!editbtn">
+    <thead>
+        <tr>
+            <th *ngFor="let header of tableheader">{{header}}
+
+            </th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of ListingData">
+            <td *ngFor="let header of tableheader">{{data[header]}}
+            </td>
+            <td><mat-icon (click)="editOnClick(data)">edit</mat-icon></td>
+            <td><mat-icon (click)="deleteOnClick(data)">delete</mat-icon></td>
+        </tr>
+    </tbody>
+</table>
+<ng-container *ngIf="editbtn && createbtn">
+    <app-dynamic-forms [EditData]="editList" (EditformData)="UpdateData($event)"></app-dynamic-forms>
+
+</ng-container>
