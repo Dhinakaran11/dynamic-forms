@@ -1,0 +1,29 @@
+<div style="height: 50 rem;">
+    <input type="text" [(ngModel)]="searchvalue" (ngModelChange)="search()">
+</div>
+<div>
+    <select [(ngModel)]="dropdownvalue" (ngModelChange)="search()">
+        <option Value="Select">Select</option>
+        <option Value="true">True</option>
+        <option Value="false">false</option>
+    </select>
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Complete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of filerlist">
+            <td>{{data.id}}</td>
+            <td>{{data.title}}</td>
+            <td>{{data.completed}}</td>
+        </tr>
+    </tbody>
+
+</table>

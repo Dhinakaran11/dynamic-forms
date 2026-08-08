@@ -1,0 +1,12 @@
+<form [formGroup]="userforms" (ngSubmit)="update()">
+
+    <div *ngFor="let field of userforms.controls | keyvalue">
+
+        <label>{{field.key}}</label>
+
+        <input [formControlName]="field.key">
+
+    </div>
+    <button type="submit">Update</button>
+
+</form>

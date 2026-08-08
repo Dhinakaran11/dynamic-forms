@@ -1,0 +1,13 @@
+<span>Name</span><br>
+<input type="text" [(ngModel)]="editData.name"><br>
+<span>Email</span><br>
+<input [(ngModel)]="editData.email"><br>
+<!-- <span>City</span><br>
+<input [(ngModel)]="editData.address.city"><br> -->
+<span>Phone</span><br>
+<input [(ngModel)]="editData.phone"><br>
+<span>Company</span><br>
+<input [(ngModel)]="editData.company.name"><br>
+<hr>
+<button type="button" *ngIf="isEditbtn" (click)="updateUserdata(editData)">Update</button>
+<button type="button" (click)="savedUserData(editData)">Save</button>

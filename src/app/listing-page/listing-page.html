@@ -1,0 +1,7 @@
+<button type="button" (click)="getList('todos')">ToDo</button>
+<button type="button" (click)="getList('users')">User</button>
+<button type="button" (click)="getList('comments')">Commands</button>
+
+<ng-container *ngIf="listValue.length>0">
+    <app-dynamic-list [ListingData]="listValue"></app-dynamic-list>
+</ng-container>

@@ -1,0 +1,36 @@
+<div style="height: 5rem;">
+    <button type="button" (click)="createdData()">Create</button>
+</div>
+
+
+
+<table *ngIf="!isEdit && !isCreateData">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>Phone</th>
+            <th>Company</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of userDetails">
+            <td>{{data?.name}}</td>
+            <td>{{data?.email}}</td>
+            <td>{{data?.address?.city}}</td>
+            <td>{{data?.phone | phonenumconversion}}</td>
+            <td>{{data?.company?.name}}</td>
+            <td><mat-icon (click)="editData(data)">edit</mat-icon></td>
+            <td><mat-icon (click)="deleteData(data)">delete</mat-icon></td>
+        </tr>
+
+    </tbody>
+</table>
+
+<ng-container *ngIf="isCreateData && isCreateData">
+    <app-edit-userdetails (updateData)="updateEditdata($event)" (savedData)="savedData($event)"
+        [editData]="editUserData" [isEditbtn]="isEdit"></app-edit-userdetails>
+</ng-container>

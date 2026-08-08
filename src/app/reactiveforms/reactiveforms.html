@@ -1,0 +1,19 @@
+<form [formGroup]="userforms" (ngSubmit)="submit()">
+
+    <label>Name</label>
+    <input type="text" formControlName="name">
+    <label>Email</label>
+    <input type="text" formControlName="email">
+    <label>Phone No</label>
+    <input type="number" formControlName="phone">
+    <label>City</label>
+    <input type="text" formControlName="city">
+    <button type="submit" [disabled]="userforms.invalid">Submit</button>
+
+
+
+
+
+    <button type="r"></button>
+
+</form>
